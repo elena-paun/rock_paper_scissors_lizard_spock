@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Spock = ({ className }) => {
+export const Spock = ({ className, handleSpock }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={handleSpock}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 59">
         <path
           fill="#3B4262"

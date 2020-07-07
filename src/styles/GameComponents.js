@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-//import { Container, Grid, makeStyles, SvgIcon } from "@material-ui/core";
-import { Pentagon } from "./Pentagon";
-import { Scissors } from "./Scissors";
-import { Spock } from "./Spock";
-import { Paper } from "./Paper";
-import { Lizard } from "./Lizard";
-import { Rock } from "./Rock";
-import { Rules } from "./Rules";
-import { RuleSheet } from "./RuleSheet";
 import styled from "styled-components";
-const StyledContainer = styled.div`
+import { Pentagon } from "../components/Players/Pentagon";
+import { Scissors } from "../components/Players/Scissors";
+import { Spock } from "../components/Players/Spock";
+import { Paper } from "../components/Players/Paper";
+import { Lizard } from "../components/Players/Lizard";
+import { Rock } from "../components/Players/Rock";
+
+export const StyledContainer = styled.div`
   @media only screen and (max-height: 765px) {
-    top: -70px;
+    top: -60px;
   }
   position: relative;
   top: 50px;
@@ -21,7 +18,7 @@ const StyledContainer = styled.div`
   margin: 0 auto;
 `;
 
-const StyledPentagon = styled(Pentagon)`
+export const StyledPentagon = styled(Pentagon)`
   margin: 0 auto;
   margin-top: 200px;
   position: relative;
@@ -36,7 +33,7 @@ const StyledPentagon = styled(Pentagon)`
     height: 250px;
   }
 `;
-const StyledScissors = styled(Scissors)`
+export const StyledScissors = styled(Scissors)`
   @media only screen and (max-height: 765px) {
     position: relative;
     width: 80px;
@@ -67,7 +64,7 @@ const StyledScissors = styled(Scissors)`
   border: 15px solid hsl(39, 89%, 49%);
   box-shadow: 0px 8px 0px -1px hsl(39, 90%, 27%);
 `;
-const StyledPaper = styled(Paper)`
+export const StyledPaper = styled(Paper)`
   @media only screen and (max-height: 765px) {
     position: relative;
     width: 100px;
@@ -97,7 +94,7 @@ const StyledPaper = styled(Paper)`
   box-shadow: 0px 8px 0px -1px hsl(230, 54%, 34%);
 `;
 
-const StyledSpock = styled(Spock)`
+export const StyledSpock = styled(Spock)`
   @media only screen and (max-height: 765px) {
     position: relative;
     width: 100px;
@@ -118,8 +115,8 @@ const StyledSpock = styled(Spock)`
   padding-top: 25px;
   padding-bottom: 50px;
   max-width: 19%;
-  width: 70px;
-  height: 30px;
+  width: 73px;
+  height: 27px;
   top: 40px;
   left: -20%;
   position: absolute;
@@ -131,7 +128,7 @@ const StyledSpock = styled(Spock)`
   box-shadow: 0px 8px 0px -1px hsl(189, 56%, 28%);
 `;
 
-const StyledLizard = styled(Lizard)`
+export const StyledLizard = styled(Lizard)`
   @media only screen and (max-height: 765px) {
     position: relative;
     width: 100px;
@@ -159,7 +156,7 @@ const StyledLizard = styled(Lizard)`
   border: 15px solid hsl(261, 73%, 60%);
   box-shadow: 0px 8px 0px -1px hsl(261, 47%, 30%);
 `;
-const StyledRock = styled(Rock)`
+export const StyledRock = styled(Rock)`
   @media only screen and (max-height: 765px) {
     position: relative;
     width: 100px;
@@ -188,67 +185,3 @@ const StyledRock = styled(Rock)`
   border: 15px solid hsl(349, 71%, 52%);
   box-shadow: 0px 8px 0px -1px rgba(171, 36, 63, 1);
 `;
-
-export const Game = () => {
-  const [showRules, setShowRules] = useState(false);
-  // const handleClick = () => {
-  //   setShowRules(!showRules);
-  // };
-  return (
-    <div>
-      <StyledContainer>
-        {showRules && <RuleSheet />}
-
-        <StyledPentagon>
-          <StyledPaper />
-
-          <StyledSpock />
-          <StyledLizard />
-          <StyledRock />
-          <StyledScissors />
-        </StyledPentagon>
-        <Rules handleClick={() => setShowRules(!showRules)} />
-      </StyledContainer>
-    </div>
-  );
-};
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     position: "relative",
-
-//     //   width: "100%",
-//   },
-//   pentagon: {
-//     width: "100%",
-//     height: "100px",
-//     //  minWidth: "300px",
-//     //  left: "15%",
-//     marginTop: "200px",
-//     // display: "flex",
-//     zIndex: -1,
-//     // flexDirection: "row",
-//     //  flexWrap: "wrap",
-//     position: "relative",
-//     //alignItems: "flex-end",
-//     // weight: "50%",
-//     //height: "auto",
-//     //  position: "relative",
-//   },
-//   paper: {
-//     width: "3%",
-//     // minWidth: "50px",
-//     // height: "60px",
-//     //minWidth: "5%",
-//     // alignItems: "flex-end",
-//     //display: "inline-flex",
-//     //width: "7%",
-//     // maxWidth: "50px",
-//     // height: "5vh",
-//     position: "absolute",
-//     // marginTop: "-200px",
-//     //left: "70%",
-//     //left: 0,
-//     // bottom: "10%",
-//     // zIndex: 2,
-//   },
-// }));

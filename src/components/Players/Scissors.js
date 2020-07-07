@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Scissors = ({ className }) => {
+export const Scissors = ({ className, handleScissors }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={handleScissors}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 58">
         <path
           fill="#3B4262"

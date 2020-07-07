@@ -1,5 +1,5 @@
-import React from "react";
-import { makeStyles} from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Grid, makeStyles, Container } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(3),
@@ -18,10 +18,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export const Score = () => {
+  const getInitialScore = () => {
+    let initialScore = 0;
+    if (localStorage.getItem("basicGameScore")) {
+      initialScore = parseInt(localStorage.getItem("basicGameScore"), 10);
+    }
+    return initialScore;
+  };
+  const [userScore, handleUserScore] = useState(() => {
+    const initialScore = getInitialScore();
+    return initialScore;
+  });
+
+  useEffect(() => {});
   const classes = useStyles();
   return (
     <div className={classes.container}>
       <p className={classes.text}>SCORE</p>
+      <p className={classes.score}>{userScore}</p>
     </div>
   );
 };

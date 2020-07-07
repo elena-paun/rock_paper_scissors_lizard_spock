@@ -3,18 +3,20 @@ import styled from "styled-components";
 
 const Container = styled.div`
   @media only screen and (max-width: 600px) {
-    padding-bottom: 120px;
-    padding-left: 35px;
-    padding-right: 40px;
+    left: 0%;
+    top: -130%;
     padding-top: 150px;
-    margin-bottom: -100px;
-    height: 500px;
-    width: 65%;
-    border-radius: 0;
-    background: white;
+    padding-bottom: 220px;
+    padding-left: 40px;
+    padding-right: 35px;
+    width: 80%;
+    max-width: 80%;
+    height: auto;
     z-index: 10;
-    background: white;
     position: absolute;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
   }
   @media (min-width: 600px) {
     border-radius: 50px;

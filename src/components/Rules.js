@@ -22,13 +22,18 @@ const StyledRules = styled.button`
 const StyledContainer = styled.div`
   @media only screen and (max-height: 765px) {
     top: 60px;
+    left: -5vh;
   }
   @media only screen and (min-height: 600px) {
     top: 130px;
+    left: -4vh;
+  }
+  @media only screen and (min-height: 765px) {
+    top: 150px;
   }
   position: relative;
   top: 150px;
-  left: -6vh;
+  left: -4vh;
   text-align: center;
 `;
 export const Rules = ({ handleClick }) => {

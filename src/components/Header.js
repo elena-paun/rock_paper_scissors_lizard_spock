@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/logo-bonus.svg";
 import { Grid, makeStyles, Container } from "@material-ui/core";
-import { Score } from "./Score.component";
+import { Score } from "./Score";
 import "../styles/header.styles.css";
 const useStyles = makeStyles((theme) => ({
   root: {

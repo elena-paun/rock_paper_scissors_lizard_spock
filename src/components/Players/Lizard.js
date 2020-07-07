@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Lizard = ({ className }) => {
+export const Lizard = ({ className, handleLizard }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={handleLizard}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 60">
         <path
           fill="#3B4262"

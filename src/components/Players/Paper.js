@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Paper = ({ className }) => {
+export const Paper = ({ className, handlePaper }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={handlePaper}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 59">
         <path
           fill="#3B4262"
