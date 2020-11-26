@@ -1,48 +1,33 @@
 import React from "react";
 import logo from "../images/logo-bonus.svg";
-import { Grid, makeStyles, Container } from "@material-ui/core";
+import styled from "styled-components";
 import { Score } from "./Score";
 import "../styles/header.styles.css";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "auto",
-    maxHeight: "80px",
-  },
-  img: {
-    width: "100px",
-    marginLeft: theme.spacing(5),
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(5),
-  },
-  rectangle: {
-    marginTop: theme.spacing(5),
-    height: "150px",
-    borderWeight: "10px",
-    borderColor: "hsl(217, 16%, 45%)",
-    borderRadius: "20px",
-    borderStyle: "solid",
-  },
-}));
+
+const HeaderContainer = styled.div`
+  margin: 40px;
+  height: 150px;
+  border-weight: 10px;
+  border-color: hsl(217, 16%, 45%);
+  border-radius: 20px;
+  border-style: solid;
+  padding: 32px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+`
+const RockPaperScissors = styled.img`
+  width: 100px;
+  align-self: center;
+`
 export const Header = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Container fixed component="main" maxWidth="lg">
-        <div className={classes.rectangle}>
-          <Grid container direction="row">
-            <Grid item xs={1} sm={4} md={7} lg={8}>
-              <img
+          <HeaderContainer>
+              <RockPaperScissors
                 src={logo}
                 alt="rock paper scissors lizard spock"
-                className={classes.img}
               />
-            </Grid>
-            <Grid item xs sm>
               <Score />
-            </Grid>
-          </Grid>
-        </div>
-      </Container>
-    </div>
+          </HeaderContainer>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 
-export const Spock = ({ className, handleSpock }) => {
-  return (
+export const Spock = ({ className, handleSpock }) => (
     <div className={className} onClick={handleSpock}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 59">
         <path
@@ -11,4 +10,3 @@ export const Spock = ({ className, handleSpock }) => {
       </svg>
     </div>
   );
-};

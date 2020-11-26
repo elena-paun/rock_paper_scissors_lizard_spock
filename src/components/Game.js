@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 //import { Container, Grid, makeStyles, SvgIcon } from "@material-ui/core";
+import GameContext from './GameContext'
+import styled from 'styled-components'
+
 import { Rules } from "./Rules";
 import { RuleSheet } from "./RuleSheet";
-import { Algorithm, CalculateWhoWins } from "./Utilities/Algorithm";
+// import { Algorithm, CalculateWhoWins } from "./Utilities/Algorithm";
 import {
   StyledContainer,
   StyledLizard,
@@ -15,48 +18,40 @@ import {
 import {
   StyledGame,
   PlayerContainer,
+  OpponentContainer,
   SingleScissors,
   SingleSpock,
   SinglePaper,
   SingleLizard,
   SingleRock,
-  YouPicked,
 } from "../styles/EachPlayer";
+import Continue from './Continue';
+const GameMessage = styled.div`
+  font-family: "Barlow Semi Condensed";
+  color: white;
+`
 
 export const Game = () => {
-  const [showRules, setShowRules] = useState(false);
-  const [showGame, setShowGame] = useState(false);
-
-  const [showScissors, setShowScissors] = useState(false);
-  const [showPaper, setShowPaper] = useState(false);
-  const [showSpock, setShowSpock] = useState(false);
-  const [showLizard, setShowLizard] = useState(false);
-  const [showRock, setShowRock] = useState(false);
-
-  const handleClick = () => {
-    setShowRules(!showRules);
-  };
-
-  const handleScissors = () => {
-    setShowScissors(!showScissors);
-    setShowGame(!showGame);
-  };
-  const handlePaper = () => {
-    setShowPaper(!showPaper);
-    setShowGame(!showGame);
-  };
-  const handleSpock = (e) => {
-    setShowSpock(!showSpock);
-    setShowGame(!showGame);
-  };
-  const handleLizard = () => {
-    setShowLizard(!showLizard);
-    setShowGame(!showGame);
-  };
-  const handleRock = () => {
-    setShowRock(!showRock);
-    setShowGame(!showGame);
-  };
+  const {
+    playerChoice, 
+    computerChoiceIndex, 
+    computerChoices, 
+    showGame, 
+    showScissors, 
+    showSpock, 
+    showPaper, 
+    showLizard, 
+    showRock, 
+    showRules, 
+    handleRules, 
+    handleScissors, 
+    handleSpock, 
+    handlePaper, 
+    handleRock, 
+    handleLizard,
+    message
+  } = useContext(GameContext)
+  // const renderComputerChoice = computerChoices.map(el => <li>{el[computerChoiceIndex]}</li>)
   return (
     <StyledGame>
       {!showGame && (
@@ -68,43 +63,47 @@ export const Game = () => {
             <StyledRock handleRock={handleRock} />
             <StyledScissors handleScissors={handleScissors} />
           </StyledPentagon>
-          <Rules handleClick={handleClick} />
+          <Rules handleRules={handleRules} />
         </StyledContainer>
       )}
       <PlayerContainer>
         {showScissors && (
           <div>
             <SingleScissors />
-            <Algorithm />
           </div>
         )}
         {showSpock && (
           <div>
             <SingleSpock />
-            <Algorithm />
           </div>
         )}
         {showPaper && (
           <div>
             <SinglePaper />
-            <Algorithm userChoice="paper" />
           </div>
         )}
         {showLizard && (
           <div>
             <SingleLizard />
-            <Algorithm />
           </div>
         )}
 
         {showRock && (
           <div>
             <SingleRock />
-            <Algorithm />
           </div>
         )}
       </PlayerContainer>
-      {showRules && <RuleSheet />}
+      {/* {computerChoices.map((computerChoice, idx) =>  ( */}
+       {playerChoice && 
+       <OpponentContainer>
+          {computerChoices[computerChoiceIndex]}
+        </OpponentContainer>
+       }
+       <GameMessage>{message}</GameMessage>
+      {/* )) */}
+      {/* } */}
+      {showRules ? <RuleSheet /> : <Continue/> }
     </StyledGame>
   );
 };

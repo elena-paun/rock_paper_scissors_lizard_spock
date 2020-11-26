@@ -1,7 +1,6 @@
 import React from "react";
 
-export const Lizard = ({ className, handleLizard }) => {
-  return (
+export const Lizard = ({ className, handleLizard }) => (
     <div className={className} onClick={handleLizard}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 60">
         <path
@@ -11,4 +10,3 @@ export const Lizard = ({ className, handleLizard }) => {
       </svg>
     </div>
   );
-};

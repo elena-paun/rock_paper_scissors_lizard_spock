@@ -1,7 +1,7 @@
 import React from "react";
-import { Paper } from "./Paper";
-import { Scissors } from "./Scissors";
-import { makeStyles } from "@material-ui/core";
+// import { Paper } from "./Paper";
+// import { Scissors } from "./Scissors";
+// import { makeStyles } from "@material-ui/core";
 
 export const Pentagon = ({ children, className }) => {
   return (

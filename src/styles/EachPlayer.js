@@ -161,7 +161,7 @@ export const ComputerSpock = styled(SingleSpock)`
   top: -140px;
   position: relative;
 `;
-export const ComputerPaper = styled(SingleScissors)`
+export const ComputerPaper = styled(SinglePaper)`
   @media only screen and (max-height: 765px) {
     left: 30%;
     top: -100px;
@@ -170,7 +170,7 @@ export const ComputerPaper = styled(SingleScissors)`
   top: -140px;
   position: relative;
 `;
-export const ComputerRock = styled(SingleScissors)`
+export const ComputerRock = styled(SingleRock)`
   @media only screen and (max-height: 765px) {
     left: 30%;
     top: -100px;
@@ -179,7 +179,7 @@ export const ComputerRock = styled(SingleScissors)`
   top: -140px;
   position: relative;
 `;
-export const ComputerLizard = styled(SingleScissors)`
+export const ComputerLizard = styled(SingleLizard)`
   @media only screen and (max-height: 765px) {
     left: 30%;
     top: -100px;
@@ -200,6 +200,18 @@ export const PlayerContainer = styled.div`
   justify-content: space-around;
   position: relative;
   margin-top: 350px;
+  width: auto;
+`;
+export const OpponentContainer = styled.div`
+  @media only screen and (max-height: 768px) {
+    top: 100px;
+    margin-top: 180px;
+    left: -15%;
+  }
+  left: -20%;
+  text-align: center;
+  justify-content: space-around;
+  position: relative;
   width: auto;
 `;
 export const StyledGame = styled.div`
