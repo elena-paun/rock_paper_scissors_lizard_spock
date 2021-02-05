@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Spock = ({ className, handleSpock }) => (
     <div className={className} onClick={handleSpock}>

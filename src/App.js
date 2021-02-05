@@ -1,14 +1,14 @@
 import React from 'react'
-import "./styles/background.styles.css";
-import { Header } from "./components/Header";
-import { Game } from "./components/Game";
-import { GameProvider } from './components/GameContext'
+import './styles/background.styles.css';
+import { Header } from './components/containers/header';
+import { Game } from './components/containers/game-container';
+import { GameProvider } from './components/provider/game-context'
 
 function App() {
 
   return (
     <GameProvider>
-      <div className="App">
+      <div className='App'>
         <Header />
         <Game />
       </div>

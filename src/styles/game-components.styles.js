@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { Pentagon } from "../components/Players/Pentagon";
-import { Scissors } from "../components/Players/Scissors";
-import { Spock } from "../components/Players/Spock";
-import { Paper } from "../components/Players/Paper";
-import { Lizard } from "../components/Players/Lizard";
-import { Rock } from "../components/Players/Rock";
+import styled from 'styled-components';
+import { Pentagon } from '../components/choices/pentagon';
+import { Scissors } from '../components/choices/scissors';
+import { Spock } from '../components/choices/spock';
+import { Paper } from '../components/choices/paper';
+import { Lizard } from '../components/choices/lizard';
+import { Rock } from '../components/choices/rock';
 
 export const StyledContainer = styled.div`
   @media only screen and (max-height: 765px) {

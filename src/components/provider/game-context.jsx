@@ -6,7 +6,7 @@ import {
     ComputerPaper,
     ComputerLizard,
     ComputerRock,
-} from "../styles/EachPlayer";
+} from '../../styles/choices.styles';
 
 
 const GameContext = createContext()
@@ -65,12 +65,7 @@ const GameContext = createContext()
       setShowGame(!showGame);
     };
    
-   
-    
-    // const generateComputerChoice = useMemo(() => {
-    //   return generateRandomNumber(0, computerChoices.length - 1);
-    // }, [computerChoices.length]);
-  
+ 
    
 
     const truthTable = [
@@ -83,15 +78,15 @@ const GameContext = createContext()
     
       const getPlayerChoice = (choice) => {
         switch (choice) {
-          case "rock":
+          case 'rock':
             return 0;
-          case "paper":
+          case 'paper':
             return 1;
-          case "scissors":
+          case 'scissors':
             return 2;
-          case "lizard":
+          case 'lizard':
             return 3;
-          case "spock":
+          case 'spock':
             return 4;
           default:
             return 0;

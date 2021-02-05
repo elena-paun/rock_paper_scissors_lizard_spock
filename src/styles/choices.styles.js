@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Spock } from "../components/Players/Spock";
-import { Paper } from "../components/Players/Paper";
-import { Scissors } from "../components/Players/Scissors";
-import { Lizard } from "../components/Players/Lizard";
-import { Rock } from "../components/Players/Rock";
+import styled from 'styled-components';
+import { Spock } from '../components/choices/spock';
+import { Paper } from '../components/choices/paper';
+import { Scissors } from '../components/choices/scissors';
+import { Lizard } from '../components/choices/lizard';
+import { Rock } from '../components/choices/rock';
 export const SingleScissors = styled(Scissors)`
   @media only screen and (max-height: 765px) {
     border: 5px solid hsl(39, 89%, 49%);
@@ -221,7 +221,7 @@ export const StyledGame = styled.div`
   height: fit-content;
 `;
 export const HousePicked = styled.p`
-  font-family: "Barlow Semi Condensed";
+  font-family: 'Barlow Semi Condensed';
   color: white;
   @media only screen and (max-height: 765px) {
     left: 30%;

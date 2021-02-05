@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
-//import { Container, Grid, makeStyles, SvgIcon } from "@material-ui/core";
-import GameContext from './GameContext'
+import React, { useContext } from 'react';
+import GameContext from '../provider/game-context'
 import styled from 'styled-components'
 
-import { Rules } from "./Rules";
-import { RuleSheet } from "./RuleSheet";
-// import { Algorithm, CalculateWhoWins } from "./Utilities/Algorithm";
+import { Rules } from '../buttons/rules-button';
+import { RuleSheet } from './rule-sheet';
 import {
   StyledContainer,
   StyledLizard,
@@ -14,7 +12,7 @@ import {
   StyledRock,
   StyledScissors,
   StyledSpock,
-} from "../styles/GameComponents";
+} from '../../styles/game-components.styles';
 import {
   StyledGame,
   PlayerContainer,
@@ -24,11 +22,12 @@ import {
   SinglePaper,
   SingleLizard,
   SingleRock,
-} from "../styles/EachPlayer";
-import Continue from './Continue';
+} from '../../styles/choices.styles';
+import Continue from '../buttons/continue-button';
 const GameMessage = styled.div`
-  font-family: "Barlow Semi Condensed";
+  font-family: 'Barlow Semi Condensed';
   color: white;
+  text-align: center;
 `
 
 export const Game = () => {
@@ -51,7 +50,6 @@ export const Game = () => {
     handleLizard,
     message
   } = useContext(GameContext)
-  // const renderComputerChoice = computerChoices.map(el => <li>{el[computerChoiceIndex]}</li>)
   return (
     <StyledGame>
       {!showGame && (
@@ -94,15 +92,12 @@ export const Game = () => {
           </div>
         )}
       </PlayerContainer>
-      {/* {computerChoices.map((computerChoice, idx) =>  ( */}
        {playerChoice && 
        <OpponentContainer>
           {computerChoices[computerChoiceIndex]}
         </OpponentContainer>
        }
        <GameMessage>{message}</GameMessage>
-      {/* )) */}
-      {/* } */}
       {showRules ? <RuleSheet /> : <Continue/> }
     </StyledGame>
   );

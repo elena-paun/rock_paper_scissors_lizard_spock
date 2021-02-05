@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Paper = ({ className, handlePaper }) => (
     <div className={className} onClick={handlePaper}>

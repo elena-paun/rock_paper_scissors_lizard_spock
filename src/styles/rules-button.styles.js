@@ -1,6 +1,6 @@
-import styled from "styled-components";
-export const StyledRules = styled.button`
-  font-family: "Barlow Semi Condensed";
+import styled from 'styled-components';
+export const StyledButtonRules = styled.button`
+  font-family: 'Barlow Semi Condensed';
   color: white;
   border: 2px solid white;
   padding: 5px 20px 5px 20px;

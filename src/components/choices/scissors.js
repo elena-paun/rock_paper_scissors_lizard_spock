@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Scissors = ({ className, handleScissors, ...props }) => (
     <div className={className} onClick={handleScissors} {...props}>
